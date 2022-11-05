@@ -38,19 +38,17 @@ public class Main {
 
         //Важно: вложенность больше двух этажей не допускается (условный оператор внутри условного оператора).
         int mobilClientOS = 1;
+        int clientDeviceYear = 2014;
         // 0 - iOS, 1 - Android
-        int ageOS = 1;
-        // 0 - before 2015, 1 - after 2015
-        if (mobilClientOS == 0 && ageOS == 0){
+        if (mobilClientOS == 0 && clientDeviceYear <= 2015){
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (mobilClientOS == 0 && ageOS == 1){
+        } else if (mobilClientOS == 0 && clientDeviceYear > 2015){
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (mobilClientOS == 1 && ageOS == 0){
+        } else if (mobilClientOS == 1 && clientDeviceYear <= 2015){
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите приложение для Android по ссылке");
         }
-
 
 
         System.out.println("Exercise 3");
@@ -63,57 +61,11 @@ public class Main {
         //Небольшая справка: високосным является каждый четвертый год, но не является каждый сотый.
         // Также високосным является каждый четырехсотый год.
 
-        int year = 1975;
-        switch (year){
-            case 1992:
-            case 1996:
-            case 2000:
-            case 2004:
-            case 2008:
-            case 2012:
-            case 2016:
-            case 2020:
-            case 2024:
-            case 2028:
-            case 2032:
-                System.out.println(year + " год является високосным");
-                break;
-            case 1990:
-            case 1991:
-            case 1993:
-            case 1994:
-            case 1995:
-            case 1997:
-            case 1998:
-            case 1999:
-            case 2001:
-            case 2002:
-            case 2003:
-            case 2005:
-            case 2006:
-            case 2007:
-            case 2009:
-            case 2010:
-            case 2011:
-            case 2013:
-            case 2014:
-            case 2015:
-            case 2017:
-            case 2018:
-            case 2019:
-            case 2021:
-            case 2022:
-            case 2023:
-            case 2025:
-            case 2026:
-            case 2027:
-            case 2029:
-            case 2030:
-            case 2031:
-                System.out.println(year + " год не является високосным");
-                break;
-            default:
-                System.out.println("Вы вышли за диапазон ответов программы");
+        int year = 400;
+        if (year%4==0 || year%400==0 && year%100!=0){
+            System.out.println(year + " год является високосным");
+        } else {
+            System.out.println(year + " год не является високосным");
         }
 
         System.out.println("Exercise 4");
